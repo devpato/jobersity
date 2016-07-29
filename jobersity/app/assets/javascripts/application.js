@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require jquery.easing.1.3
+//= require jquery.waypoints.min
+//= require main
+//= require modernizr-2.6.2.min
+//= require respond.min
 //= require_tree .
