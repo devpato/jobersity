@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   get 'inicio/index'
   root 'inicio#index'
 
+  get 'admin' => 'admin#index'
+    controller :sessions do
+      get 'login' => :new
+      post 'login' => :create
+      delete 'logout' => :destroy
+    end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
