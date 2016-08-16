@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-   skip_before_action :authorize
+  skip_before_action :authorize
+
   def new
   end
 
@@ -17,5 +18,6 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to store_url, notice: "Logged out"
   end
+
 end
 
