@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
+  post 'sessions/new' => 'inicio#index'
+
   resources :users
   get 'users/new'
   get 'users/create'
