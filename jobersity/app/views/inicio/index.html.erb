@@ -56,8 +56,8 @@
 		            <li><a href="#" data-nav-section="pricing"><span>Precio</span></a></li>
 		            <li><a href="#" data-nav-section="press"><span>Empresas</span></a></li>
 		            <li>
-		            	<% if session[:user_id] %>
-							<%= button_to 'Logout', logout_path, method: :delete%>
+		            	<% if session[:user_id] %>						
+							<%= button_to 'Cerrar Sesion', logout_path, method: :delete, :class=> 'btn btn-info sessions'%>	
 						<%else%>
     		            	<button type="button" class="btn btn-info sessions" data-toggle="modal" data-target="#myModal">Iniciar Sesion</button>
 						<% end %>
