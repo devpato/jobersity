@@ -9,10 +9,6 @@
 <body>
 
 <%= yield %>
-<% if session[:user_id] %>
-	<%= button_to 'Logout', logout_path, method: :delete%>
-<%else%>
-	<button type="button" class="btn btn-info sessions" data-toggle="modal" data-target="#myModal">Iniciar Sesion</button>
-<% end %>
+
 </body>
 </html>
