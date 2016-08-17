@@ -59,12 +59,12 @@
 		            	<% if session[:user_id] %>						
 							<%= button_to 'Cerrar Sesion', logout_path, method: :delete, :class=> 'btn btn-info sessions'%>	
 						<%else%>
-    		            	<button type="button" class="btn btn-info sessions" data-toggle="modal" data-target="#myModal">Iniciar Sesion</button>
+    		            	<%= link_to 'Inicia Sesion',sessions_new_path, :class=> ''%>
 						<% end %>
 		            </li>
              	     <li>
              	     	<% if !session[:user_id] %>						
-							<button type="button" class="btn btn-info signup" data-toggle="modal" data-target="#myModal1">Registrate</button>
+							<%= link_to 'Registrate',users_new_path, :class=> ''%>	
 						<% end %>
              	     	
              	     </li>
