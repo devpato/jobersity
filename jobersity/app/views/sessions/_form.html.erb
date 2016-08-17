@@ -1,20 +1,40 @@
-<div class="">
-  <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
-  <% end %>
-  <%= form_tag("/login", method: "post") do %>
-    <fieldset>
-      <div>
-        <%= label_tag :name, 'Name:' %>
-        <%= text_field_tag :name, params[:name] %>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Inicio Sesion</h4>
+        </div>
+        <div class="modal-body">
+        <div class="col-sm-offset-2">
+            <% if flash[:alert] %>
+              <p id="notice"><%= flash[:alert] %></p>
+            <% end %>
+            <%= form_tag("/login", method: "post") do %>
+              <fieldset>
+                <div>
+                  <%= label_tag :name, 'Nombre:' %>
+                  <%= text_field_tag :name, params[:name],:class=>"infoName" %>
+                </div>
+                <br>
+                <div>
+                  <%= label_tag :password, 'Contraseña:' %>
+                  <%= password_field_tag :password, params[:password],:class=>"infoPass" %>
+                </div>
+                <div>
+                  
+                </div>
+              </fieldset>
+            
+          </div>            
+        </div>
+        <div class="modal-footer">
+          <%= submit_tag "Login" %>
+        </div>
+        <% end %>
       </div>
-      <div>
-        <%= label_tag :password, 'Password:' %>
-        <%= password_field_tag :password, params[:password] %>
-      </div>
-      <div>
-        <%= submit_tag "Login" %>
-      </div>
-    </fieldset>
-  <% end %>
-</div>
+
+    </div>
+  </div>
