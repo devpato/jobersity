@@ -57,7 +57,7 @@
 		            <li><a href="#" data-nav-section="press"><span>Empresas</span></a></li>
 		            <li>
 		            	<% if session[:user_id] %>						
-							<%= button_to 'Cerrar Sesion', logout_path, method: :delete, :class=> ''%>	
+							<%= link_to 'Cerrar Sesion', logout_path, method: :delete, :class=> ''%>	
 						<%else%>
     		            	<%= link_to 'Inicia Sesion',sessions_new_path, :class=> ''%>
 						<% end %>
