@@ -15,11 +15,13 @@
             <%= form_tag("/login", method: "post") do %>
               <fieldset>
                 <div>
-                  <%= label_tag :name, 'Nombre:' %>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <%= label_tag :name, 'Nombre de usuario:' %>
                   <%= text_field_tag :name, params[:name],:class=>"infoName" %>
                 </div>
                 <br>
                 <div>
+                  <i class="fa fa-lock" aria-hidden="true"></i>
                   <%= label_tag :password, 'Contraseña:' %>
                   <%= password_field_tag :password, params[:password],:class=>"infoPass" %>
                 </div>
@@ -31,7 +33,7 @@
           </div>            
         </div>
         <div class="modal-footer">
-          <%= submit_tag "Aceptar" %>
+          <%= submit_tag "Aceptar",:class=>"btn btn-primary" %>
         </div>
         <% end %>
       </div>
