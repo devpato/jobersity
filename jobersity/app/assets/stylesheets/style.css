@@ -22,7 +22,9 @@ body {
   height: 100%;
   position: relative;
 }
-
+.is{
+  cursor: pointer;
+}
 a {
   color: #6173f4;
   -webkit-transition: 0.5s;
