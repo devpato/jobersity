@@ -5,25 +5,45 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Inicio Sesion</h4>
+        <h4 class="modal-title">Registrate</h4>
       </div>
       <div class="modal-body">
       <div class="col-sm-offset-2">
           <% if flash[:alert] %>
             <p id="notice"><%= flash[:alert] %></p>
           <% end %>
-          <%= form_tag("/login", method: "post") do %>
+          <%= form_for(User.new, 
+                       url: url_for(controller: 'users', action: 'create'),
+                       method: "post") do |f| %>
             <fieldset>
+              <div class="field">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <%= f.label :first_name, 'Nombre:' %>
+                <%= f.text_field :first_name, :class=>"infoName" %>
+              </div>
+              <br>
               <div>
                 <i class="fa fa-user" aria-hidden="true"></i>
-                <%= label_tag :name, 'Nombre de usuario:' %>
-                <%= text_field_tag :name, params[:name],:class=>"infoName" %>
+                <%= f.label :last_name, 'Apellido:' %>
+                <%= f.text_field :last_name, :class=>"infoName" %>
+              </div>
+              <br>
+              <div>
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <%= f.label :email, 'Email:' %>
+                <%= f.text_field :email, :class=>"infoEmail" %>
               </div>
               <br>
               <div>
                 <i class="fa fa-lock" aria-hidden="true"></i>
-                <%= label_tag :password, 'Contraseña:' %>
-                <%= password_field_tag :password, params[:password],:class=>"infoPass" %>
+                <%= f.label :password, 'Contraseña:' %>
+                <%= f.password_field :password, :class=>"infoPass" %>
+              </div>
+              <br>
+              <div>
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <%= f.label :password, 'Confirmación de contraseña:' %>
+                <%= f.password_field :password, :class=>"infoPass" %>
               </div>
               <div>
                 
