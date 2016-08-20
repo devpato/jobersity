@@ -57,17 +57,16 @@
 		            <li><a href="#" data-nav-section="press"><span>Empresas</span></a></li>
 		            <li>
 		            	<% if session[:user_id] %>						
-							<%= link_to 'Cerrar Sesion', logout_path, method: :delete, :class=> ''%>	
-						<%else%>
-    		            	<a class="is" type="button" class="" data-toggle="modal" data-target="#loginModal" data-nav-section="is">Iniciar sesion</a>
-						<% end %>
+                    <%= link_to 'Cerrar Sesion', logout_path, method: :delete, :class=> ''%>	
+                  <%else%>
+                    <a class="is" type="button" class="" data-toggle="modal" data-target="#loginModal" data-nav-section="is">Iniciar sesion</a>
+                  <% end %>
 		            </li>
-             	     <li>
-             	     	<% if !session[:user_id] %>						
-    		            	<a class="is" type="button" class="" data-toggle="modal" data-target="#registerModal" data-nav-section="is">Registrate</a>
-						<% end %>
-             	     	
-             	     </li>
+                 <li>
+                  <% if !session[:user_id] %>						
+                    <a class="is" type="button" class="" data-toggle="modal" data-target="#registerModal" data-nav-section="is">Registrate</a>
+                  <% end %>
+                 </li>
 		          </ul>
 		        </div>
 			    </nav> 
