@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-	validates :name, presence: true, uniqueness: true
+	validates :name, presence: true
+	validates :email, presence: true, uniqueness: true
+
 	has_secure_password
-	private
+
 	private
 		def ensure_an_admin_remains
 		if User.count.zero?
