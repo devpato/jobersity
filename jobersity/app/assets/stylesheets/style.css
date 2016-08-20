@@ -22,9 +22,17 @@ body {
   height: 100%;
   position: relative;
 }
+#notice{
+  color: red;
+}
+.headerColor{
+  background-color: #6173f4;
+  color: white !important;
+}
 .is{
   cursor: pointer;
 }
+
 a {
   color: #6173f4;
   -webkit-transition: 0.5s;

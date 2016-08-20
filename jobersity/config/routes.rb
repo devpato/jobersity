@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   get 'inicio/index'
   root 'inicio#index' , as: 'inicio'
+  root :to => 'incio#index'
 
   get 'admin' => 'admin#index'
     controller :sessions do
