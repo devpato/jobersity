@@ -1,0 +1,86 @@
+<div id="registerModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-header headerColor">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="color:white;">Registrate</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-offset-1 col-sm-10">
+
+            <% if flash[:alert] %>
+              <p id="notice"><%= flash[:alert] %></p>
+            <% end %>
+
+            <%= form_for(User.new, 
+                         url: url_for(controller: 'users', action: 'create'),
+                         method: "post") do |f| %>
+
+              <fieldset>
+                <div>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <%= f.label :first_name, 'Nombre:' %>
+                  <br>
+                  <%= f.text_field :first_name, :class=>"form-control" %>
+                </div>
+
+                <br>
+
+                <div>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <%= f.label :last_name, 'Apellido:' %>
+                  <br>
+                  <%= f.text_field :last_name, class: "form-control" %>
+                </div>
+
+                <br>
+
+                <div>
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <%= f.label :email, 'Email:' %>
+                  <br>
+                  <%= f.text_field :email, :class=>"form-control" %>
+                </div>
+
+                <br>
+
+                <div>
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                  <%= f.label :password, 'Contraseña:' %>
+                  <br>
+                  <%= f.password_field :password, :class=>"form-control" %>
+                </div>
+
+                <br>
+
+                <div>
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                  <%= f.label :password_confirmation, 'Confirmación de contraseña:' %>
+                  <br>
+                  <%= f.password_field :password_confirmation, :class=>"form-control" %>
+                </div>
+
+              </fieldset>
+            
+          </div>            
+        </div>
+
+        <br>
+
+      </div> <!-- End of modal's body -->
+
+      <div class="modal-footer">
+        <%= submit_tag "Aceptar",:class=>"btn btn-primary" %>
+      </div>
+
+    <% end %> <!-- End the form -->
+
+    </div>  <!-- End modal's content -->
+
+  </div> <!-- End "modal-dialog" -->
+</div> <!-- End of entire modal -->

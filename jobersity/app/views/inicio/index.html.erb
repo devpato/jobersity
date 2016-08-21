@@ -55,8 +55,18 @@
 		            <li><a href="#" data-nav-section="testimonials"><span>Testimonios</span></a></li>
 		            <li><a href="#" data-nav-section="pricing"><span>Precio</span></a></li>
 		            <li><a href="#" data-nav-section="press"><span>Empresas</span></a></li>
-		            <li><button type="button" class="btn btn-info sessions" data-toggle="modal" data-target="#myModal">Iniciar Sesion</button></li>
-             	     <li><button type="button" class="btn btn-info signup" data-toggle="modal" data-target="#myModal1">Registrate</button></li>
+		            <li>
+		            	<% if session[:user_id] %>						
+                    <%= link_to 'Cerrar Sesion', logout_path, method: :delete, :class=> ''%>	
+                  <%else%>
+                    <a class="is" type="button" class="" data-toggle="modal" data-target="#loginModal" data-nav-section="is">Iniciar sesion</a>
+                  <% end %>
+		            </li>
+                 <li>
+                  <% if !session[:user_id] %>						
+                    <a class="is" type="button" class="" data-toggle="modal" data-target="#registerModal" data-nav-section="is">Registrate</a>
+                  <% end %>
+                 </li>
 		          </ul>
 		        </div>
 			    </nav> 
@@ -470,48 +480,12 @@
 
 		</div>
 	</footer>
+
+
 	<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-
-	    <!-- Modal content-->
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Modal Header</h4>
-	      </div>
-	      <div class="modal-body">
-	        <p>Some text in the modal.</p>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
-
-	  </div>
-	</div>
-	<div id="myModal1" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-
-	    <!-- Modal content-->
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Modal Header</h4>
-	      </div>
-	      <div class="modal-body">
-	        <p>Some text in the modal.</p>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
-
-	  </div>
-	</div>
-
-
-	
+	<%= render 'sessions/registerModal' %> 
+	<%= render 'sessions/loginModal' %> 
+  
 	<!-- For demo purposes Only ( You may delete this anytime :-) -->
 	
 	<!-- End demo purposes only -->
