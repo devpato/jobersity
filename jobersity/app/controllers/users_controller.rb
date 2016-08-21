@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
         UserMailer.welcome_email(@user).deliver_now
 
-        format.html { redirect_to users_url,
+        format.html { redirect_to @user,
           notice: "User #{@user.last_name}, #{@user.first_name} was successfully created." }
         format.json { render action: 'show',
           status: :created, location: @user }
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_url,
+        format.html { redirect_to @user,
           notice: "User #{@user.last_name}, #{@user.first_name} was successfully updated." }
         format.json { head :no_content }
       else
@@ -74,7 +74,7 @@ class UsersController < ApplicationController
       flash[:notice] = e.message
     end
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to @user }
       format.json { head :no_content }
     end
   end
