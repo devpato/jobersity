@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require jquery.easing.1.3
 //= require jquery.waypoints.min

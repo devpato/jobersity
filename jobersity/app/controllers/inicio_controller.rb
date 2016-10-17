@@ -7,7 +7,9 @@ class InicioController < ActionController::Base
   	@user = User.find(params[:goal_id])
   end
   def index
-  	@user = User.new
+  	@user = User.new    
+    
+
   end
 
 end

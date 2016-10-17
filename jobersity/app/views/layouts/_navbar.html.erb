@@ -2,12 +2,15 @@
 	<div class="navbar-header">
 		<!-- Mobile Toggle Menu Button -->
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-	  	<a class="navbar-brand" href="index.html"><%= image_tag "logo.png", :class => "img img-full img-responsive",:style=>"margin-top: -38px"%>  </a> 
+		<%= link_to '' do %>
+		  <%= image_tag "logo.png", :class => "img img-full img-responsive",:style=>"margin-top: -38px"%> 
+		<% end %>
+	  	<a class="navbar-brand" href="index.html"> </a> 
 	</div>
 	<div id="navbar" class="navbar-collapse collapse">
 	  <ul class="nav navbar-nav navbar-right">
-	    <li class="active"><a href="" data-nav-section="home"><span><%= link_to "Inicio", root_url%></span></a></li>
-	    <li><a href="#" data-nav-section="services"><span><%= link_to "Servicios", "#{root_url}#services"%></span></a></li>
+	    <li class="active"><a href="" data-nav-section="home"><span><%= link_to "Inicio", root_url,data: { no_turbolink: true }%></span></a></li>
+	    <li><a href="#" data-nav-section="services"><span>Servicios</span></a></li>
 	    <li><a href="#" data-nav-section="features"><span>Ventajas</span></a></li>
 	    <li><a href="#" data-nav-section="testimonials"><span>Testimonios</span></a></li>
 	    <li><a href="#" data-nav-section="pricing"><span>Precio</span></a></li>
@@ -27,3 +30,20 @@
 	  </ul>
 	</div>
 </nav> 
+<script type="text/javascript">
+	setInterval(function() 
+	{ 
+		if(document.URL.indexOf("#")==-1)
+    	{
+		    // Set the URL to whatever it was plus "#".
+		    url = document.URL+"";
+		    location = "#";
+
+		    //Reload the page
+		    location.reload(true);
+    }},1);
+
+    //Check if the current URL contains '#'
+    
+   
+</script>
