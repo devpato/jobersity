@@ -49,7 +49,7 @@ group :development do
   gem 'bootstrap-sass', '~> 3.2.0'
   #gem 'autoprefixer-rails'
   gem 'font-awesome-sass'
-  gem 'bcrypt-ruby', '3.1.2'
+  gem 'bcrypt-ruby', '~> 3.1.2'
   group :production do
     gem 'pg', '0.17.1'
     gem 'rails_12factor', '0.0.2'
