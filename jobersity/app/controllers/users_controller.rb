@@ -36,10 +36,12 @@ class UsersController < ApplicationController
           notice: "User #{@user.last_name}, #{@user.first_name} was successfully created." }
         format.json { render action: 'show',
           status: :created, location: @user }
+          redirect_to inicio_url, notice: "Inicio sesion"
       else
-        format.html { render action: 'new' }
+        format.html {redirect_to inicio_url, notice: "Inicio sesion"  } #render action: 'new'
         format.json { render json: @user.errors,
           status: :unprocessable_entity }
+
       end
     end
   end

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'inicio#index' , as: 'inicio'
+  root 'incio#index'
+
+
   get 'admin/index'
 
   get 'sessions/new'
@@ -9,7 +13,7 @@ Rails.application.routes.draw do
 
   post 'sessions/new' => 'inicio#index'
 
-  get 'admin/index' , as: "home"
+  
 
   resources :users
   get 'users/new'=> 'users#new'
@@ -20,9 +24,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
  
-  root 'inicio#index' , as: 'inicio'
-  root :to => 'incio#index'
-
+  
   get 'admin' => 'admin#index'
     controller :sessions do
       get 'login' => :new
