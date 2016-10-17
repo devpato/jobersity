@@ -62,11 +62,14 @@ a {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-a:hover, a:active, a:focus {
+a:hover, a:active, a:focus{
   color: #6173f4;
   outline: none;
 }
-
+linkos{
+  color: #6173f4;
+  outline: none;
+}
 p {
   margin-bottom: 1.5em;
 }

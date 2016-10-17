@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post 'sessions/new' => 'inicio#index'
 
+  get 'admin/index' , as: "home"
+
   resources :users
   get 'users/new'=> 'users#new'
   get 'users/create'
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  get 'inicio/index'
+ 
   root 'inicio#index' , as: 'inicio'
   root :to => 'incio#index'
 
