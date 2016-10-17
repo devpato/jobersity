@@ -1,0 +1,29 @@
+ <nav class="navbar navbar-default">
+	<div class="navbar-header">
+		<!-- Mobile Toggle Menu Button -->
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+	  	<a class="navbar-brand" href="index.html"><%= image_tag "logo.png", :class => "img img-full img-responsive",:style=>"margin-top: -38px"%>  </a> 
+	</div>
+	<div id="navbar" class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav navbar-right">
+	    <li class="active"><a href="#" data-nav-section="home"><span>Incio</span></a></li>
+	    <li><a href="#" data-nav-section="services"><span>Servicios</span></a></li>
+	    <li><a href="#" data-nav-section="features"><span>Ventajas</span></a></li>
+	    <li><a href="#" data-nav-section="testimonials"><span>Testimonios</span></a></li>
+	    <li><a href="#" data-nav-section="pricing"><span>Precio</span></a></li>
+	    <li><a href="#" data-nav-section="press"><span>Empresas</span></a></li>
+	    <li>
+	    	<% if session[:user_id] %>						
+	    <%= link_to 'Cerrar Sesion', logout_path, method: :delete, :class=> ''%>	
+	  <%else%>
+	    <a class="is" type="button" class="" data-toggle="modal" data-target="#loginModal" data-nav-section="is">Iniciar sesion</a>
+	  <% end %>
+	    </li>
+	 <li>
+	  <% if !session[:user_id] %>						
+	    <a class="is" type="button" class="" data-toggle="modal" data-target="#registerModal" data-nav-section="is">Registrate</a>
+	  <% end %>
+	 </li>
+	  </ul>
+	</div>
+</nav> 
